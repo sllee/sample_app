@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   match '/signin', to: 'sessions#new', via: 'get'
   match 'signout', to: 'sessions#destroy', via: 'delete'
 
+  resources :microposts, only: [:create, :destroy]
+
   # get 'static_pages/home'
   # get 'static_pages/help'
   # get 'static_pages/about'
